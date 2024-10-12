@@ -1,25 +1,48 @@
 #include <stdio.h>
 #include <stdbool.h>
+#include <time.h>
 
 // #define TAM 10
 
 void bubble_sort(int[], int);
 
 void bubble_sort(int colecao[], int tamanho){
+	clock_t t;
+  //double cpu_time_used;  
+
 	int i, j, elemento_auxiliar;
 	int trocou = true;
+	int comp = 0;
+	int trocas = 0;
 	
 	for(i=0; i < tamanho && trocou; i++){
 		trocou = false;
+		//printf("%6d", colecao[i]);
 		for(j=0; j < tamanho-(1+i); j++){
+			//printf("%6d", colecao[i]);
+			comp++;
 			if(colecao[j] > colecao[j+1]){
+				//printf("%6d", colecao[i]);
 				elemento_auxiliar = colecao[j];
 				colecao[j] = colecao[j+1];
 				colecao[j+1] = elemento_auxiliar;
 				trocou = true;
+				trocas++;
 			}
 		}		
 	}
+
+		t = clock(); //armazena tempo
+		
+
+		t = clock() - t; //tempo final - tempo inicial
+
+		//imprime o tempo na tela
+		printf("Tempo de execucao Bubble Sort: %lf\n\n", ((double)t)/((CLOCKS_PER_SEC/1000)));
+
+		printf("Quantidade de Comparações - Bubble Sort: %d\n\n", comp);
+
+		printf("Quantidade de Trocas - Bubble Sort: %d\n\n", trocas);
 }
 
 // void insert_sort(int[], int);

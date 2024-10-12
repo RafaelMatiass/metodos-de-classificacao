@@ -1,5 +1,5 @@
-#include "lib.h"
 #include "metodos.c"
+#include "lib_impl.c"
 #define SIZE 100
 
 int main() {
@@ -12,6 +12,7 @@ int main() {
   }
 
   printf("\n\n");
+   printf("Metodos de classificação: \n");
   // gerar_aleatorio(vetor, SIZE);
   // gerar_decrescente(vetor, SIZE);
   bubble_sort(vetor, SIZE);
