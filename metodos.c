@@ -74,7 +74,7 @@ void insert_sort(int colecao[], int tamanho) {
   printf("\n\n");
 }
 
-// Merge Sort 
+// MERGE SORT
 void merge_sort(int colecao[], int inicio, int fim) {
   static clock_t t; 
   if (inicio == 0 && fim != 0) { 
