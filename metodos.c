@@ -25,9 +25,8 @@ int trocas_merge = 0;
 
 void bubble_sort(int colecao[], int tamanho){
 	clock_t t;
-    t = clock(); //armazena tempo
+  t = clock(); 
 
-    //double cpu_time_used;  
 	int i, j, elemento_auxiliar;
 	int trocou = true;
 	int comp = 0;
@@ -35,12 +34,9 @@ void bubble_sort(int colecao[], int tamanho){
 
 	for(i=0; i < tamanho && trocou; i++){
 		trocou = false;
-		//printf("%6d", colecao[i]);
 		for(j=0; j < tamanho-(1+i); j++){
-			//printf("%6d", colecao[i]);
 			comp++;
 			if(colecao[j] > colecao[j+1]){
-				//printf("%6d", colecao[i]);
 				elemento_auxiliar = colecao[j];
 				colecao[j] = colecao[j+1];
 				colecao[j+1] = elemento_auxiliar;
@@ -50,14 +46,13 @@ void bubble_sort(int colecao[], int tamanho){
 		}		
 	}
 	
-		
-		t = clock() - t; //tempo final - tempo inicial
+  t = clock() - t;
 
-        printf("\n############## BUBBLE SORT ##############\n");
-        printf("Tempo de execucao Bubble Sort: %lf  ms\n", ((double)t)/((CLOCKS_PER_SEC/1000)));
-        printf("Quantidade de Comparacoes - Bubble Sort: %d\n", comp);
-        printf("Quantidade de Trocas - Bubble Sort: %d\n\n", trocas);
-        printf("\n\n");
+  printf("\n############## BUBBLE SORT ##############\n");
+  printf("Tempo de execucao Bubble Sort: %lf  ms\n", ((double)t)/((CLOCKS_PER_SEC/1000)));
+  printf("Quantidade de Comparacoes - Bubble Sort: %d\n", comp);
+  printf("Quantidade de Trocas - Bubble Sort: %d\n\n", trocas);
+  printf("\n\n");
 		
 }
 
@@ -85,7 +80,6 @@ void insert_sort(int colecao[], int tamanho) {
     } 
   }
 
- 
   t = clock() - t;
   printf("############## INSERTION SORT ##############\n");
   printf("Tempo de execucao Insertion Sort: %lf ms\n", ((double)t) / (CLOCKS_PER_SEC / 1000));
@@ -109,7 +103,6 @@ void merge_sort(int colecao[], int inicio, int fim) {
   }
 
   if (inicio == 0 && fim == TAM-1) { 
-   
     t = clock() - t;
     printf("Tempo de execucao Merge Sort: %lf ms\n", ((double)t) / ((CLOCKS_PER_SEC / 1000)));
     printf("\n\n");
@@ -151,7 +144,7 @@ void intercala(int colecao[], int inicio, int fim, int meio) {
     colecao[inicio + i] = arquivo_aux[i];
   }
 
-   if (inicio == 0 && fim == TAM-1) { 
+  if (inicio == 0 && fim == TAM-1) { 
     printf("############## MERGE SORT ##############\n");
     printf("Quantidade de Comparacoes - Merge Sort: %d\n", comp_merge);
     printf("Quantidade de Trocas - Merge Sort: %d\n", trocas_merge);
@@ -165,7 +158,6 @@ void quicksort(int x[], int lb, int ub) {
   clock_t t; 
   t = clock(); 
   
-
   int j = -1;
   if (lb >= ub) {
     return;
@@ -175,10 +167,9 @@ void quicksort(int x[], int lb, int ub) {
   quicksort(x, lb, j - 1);
   quicksort(x, j + 1, ub);
 
-   if (lb == 0 && ub == TAM - 1) { // Final
+   if (lb == 0 && ub == TAM - 1) { 
 
       t = clock() - t;
-      //printf("Executando Quick Sort: lb = %d, ub = %d\n", lb, ub); 
       printf("############## QUICK SORT ##############\n");
       printf("Tempo de execucao Quick Sort: %lf ms\n", ((double)t) / (CLOCKS_PER_SEC / 1000));
       printf("Quantidade de Comparacoes - Quick Sort: %d\n", comp_quick);
