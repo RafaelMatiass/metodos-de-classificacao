@@ -13,8 +13,8 @@ int main() {
   int vetor[SIZE];
   int bubble[SIZE], insert[SIZE], selection[SIZE], merge[SIZE], quick[SIZE];
 
-  // gerar_decrescente(vetor, SIZE); // gera array decrescente
-   gerar_aleatorio(vetor, SIZE); // gera array aleatorio
+   gerar_decrescente(vetor, SIZE); // gera array decrescente
+  // gerar_aleatorio(vetor, SIZE); // gera array aleatorio
   // gerar_crescente(vetor, SIZE); // gera array crescente
 
   // Copia array e aplica Bubble Sort
