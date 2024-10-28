@@ -1,6 +1,6 @@
 #include "metodos.c"
 #include "lib_impl.c"
-#define SIZE 100000
+#define SIZE 1000000
 
 // Função para copiar arrays
 void copiar_array(int origem[], int destino[], int tamanho) {
@@ -13,8 +13,8 @@ int main() {
   int vetor[SIZE];
   int bubble[SIZE], insert[SIZE], selection[SIZE], merge[SIZE], quick[SIZE];
 
-  gerar_decrescente(vetor, SIZE); // gera array decrescente
-  // gerar_aleatorio(vetor, SIZE); // gera array aleatorio
+  // gerar_decrescente(vetor, SIZE); // gera array decrescente
+   gerar_aleatorio(vetor, SIZE); // gera array aleatorio
   // gerar_crescente(vetor, SIZE); // gera array crescente
 
   // Copia array e aplica Bubble Sort
@@ -37,17 +37,7 @@ int main() {
   copiar_array(vetor, quick, SIZE);
   quicksort(quick, 0, SIZE - 1);
 
-  for(int i = 0; i < SIZE; i++){
-    printf("%6d ", vetor[i]);
-  }
-
-  printf("\n\n");
-
-  for(int i = 0; i < SIZE; i++){
-    printf("%6d ", quick[i]);
-  }
-
-  printf("Compilei");
+  printf("Compilei\n\n");
 
   return 0;
 }

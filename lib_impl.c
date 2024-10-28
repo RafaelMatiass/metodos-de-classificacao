@@ -16,7 +16,7 @@ void gerar_aleatorio(int arr[], int size) {
 }
 
 void gerar_decrescente(int arr[], int size){
-  arr[0] = 1000000;//INT_MAX
+  arr[0] = 1000000000;//INT_MAX
   for (int i = 1; i < size; i++){
     arr[i] = arr[i - 1] - 1;
   }
